@@ -1,0 +1,542 @@
+[
+  {
+    "term": "jungxt",
+    "pron": "JUNG-kst",
+    "pos": "noun",
+    "cat": "Slang",
+    "votes": 412,
+    "def": "Any word that leaves your thumbs bearing no resemblance to what your brain sent. The entire genre of garbled texting, named in a 12:47 a.m. moment of accidental genius.",
+    "meant": "just text",
+    "ex": [
+      [
+        "them",
+        "what should we call the dictionary"
+      ],
+      [
+        "you",
+        "jungxt"
+      ],
+      [
+        "them",
+        "…that says nothing"
+      ],
+      [
+        "you",
+        "it says everything"
+      ]
+    ],
+    "by": "@thefounder"
+  },
+  {
+    "term": "sven",
+    "pron": "SVEN",
+    "pos": "noun",
+    "cat": "Sleepy Text",
+    "votes": 388,
+    "def": "The mysterious Scandinavian man who appears in your chat when you fall asleep mid-conversation. Nobody knows Sven. Sven knows everybody. He has never once explained himself.",
+    "meant": "(asleep — no message intended)",
+    "ex": [
+      [
+        "you",
+        "Sven"
+      ],
+      [
+        "them",
+        "who is sven??"
+      ],
+      [
+        "you",
+        "…fin"
+      ]
+    ],
+    "by": "@foreheadtypist"
+  },
+  {
+    "term": "fin",
+    "pron": "FEEN",
+    "pos": "interjection",
+    "cat": "Sign-Off",
+    "votes": 356,
+    "def": "French for “the end,” typed by someone whose brain has already left the conversation. A dramatic curtain call — usually delivered 40 minutes before the texter sends six more messages.",
+    "meant": "I'm done talking (narrator: he was not)",
+    "ex": [
+      [
+        "you",
+        "plutonium pizza. atomic gases. ..fin"
+      ],
+      [
+        "them",
+        "you said fin an hour ago"
+      ],
+      [
+        "you",
+        "this is the credits scene"
+      ]
+    ],
+    "by": "@midnightmatt"
+  },
+  {
+    "term": "ducking",
+    "pron": "DUK-ing",
+    "pos": "adjective",
+    "cat": "Autocorrect Casualty",
+    "votes": 501,
+    "def": "The family-friendly stand-in your phone swaps in at the worst possible moment, transforming raw fury into a waterfowl situation. Nobody has ever been ducking anything on purpose.",
+    "meant": "a much stronger word",
+    "ex": [
+      [
+        "you",
+        "I ducking told you the meeting moved"
+      ],
+      [
+        "them",
+        "sir this is the group chat with your boss in it"
+      ]
+    ],
+    "by": "@quackattack"
+  },
+  {
+    "term": "defiantly",
+    "pron": "de-FY-ant-lee",
+    "pos": "adverb",
+    "cat": "Autocorrect Casualty",
+    "votes": 344,
+    "def": "What “definitely” becomes after midnight. Accidentally turns every agreement into a small act of rebellion: “I will defiantly be there” sounds like you're attending under protest.",
+    "meant": "definitely",
+    "ex": [
+      [
+        "you",
+        "ill defiantly help you move saturday"
+      ],
+      [
+        "them",
+        "you don't have to sound so brave about it"
+      ]
+    ],
+    "by": "@reluctanthelper"
+  },
+  {
+    "term": "k.",
+    "pron": "KAY.",
+    "pos": "noun",
+    "cat": "Chat Behavior",
+    "votes": 467,
+    "def": "One letter and a period: the most dangerous message in the English language. Contains more hostility per character than any text ever sent. Entire relationships have been ended by “k.” and its colder sibling, “k”",
+    "meant": "okay (it is not okay)",
+    "ex": [
+      [
+        "them",
+        "we need to talk about the dishes"
+      ],
+      [
+        "you",
+        "k."
+      ],
+      [
+        "them",
+        "and there it is"
+      ]
+    ],
+    "by": "@coldestshoulder"
+  },
+  {
+    "term": "asdfghjkl",
+    "pron": "AZ-duf-guh-JKL",
+    "pos": "interjection",
+    "cat": "Slang",
+    "votes": 429,
+    "def": "A keyboard smash expressing an emotion too large for language — joy, rage, secondhand embarrassment, or seeing your crush type your name. The home row is the first casualty of feeling things.",
+    "meant": "I have no words, so here are all of them at once",
+    "ex": [
+      [
+        "them",
+        "he liked your photo from 2019"
+      ],
+      [
+        "you",
+        "asdfghjkl"
+      ]
+    ],
+    "by": "@homerowhero"
+  },
+  {
+    "term": "otw",
+    "pron": "O-T-W",
+    "pos": "abbreviation",
+    "cat": "Chat Behavior",
+    "votes": 398,
+    "def": "“On the way.” Translation: still on the couch, one shoe located, reconsidering the entire plan. A legally binding promise that means absolutely nothing.",
+    "meant": "I will leave eventually",
+    "ex": [
+      [
+        "them",
+        "you close?"
+      ],
+      [
+        "you",
+        "otw"
+      ],
+      [
+        "them",
+        "you sent that from your couch last time"
+      ],
+      [
+        "you",
+        "new couch. same energy"
+      ]
+    ],
+    "by": "@fiveMoreMinutes"
+  },
+  {
+    "term": "5 min away",
+    "pron": "FYVE min uh-WAY",
+    "pos": "phrase",
+    "cat": "Chat Behavior",
+    "votes": 377,
+    "def": "A unit of time invented by texters, equal to anywhere between 20 and 90 actual minutes. The “5” is decorative. The “away” is aspirational.",
+    "meant": "geography has not yet been consulted",
+    "ex": [
+      [
+        "you",
+        "5 min away"
+      ],
+      [
+        "them",
+        "you live 40 minutes away"
+      ],
+      [
+        "you",
+        "traffic of the soul"
+      ]
+    ],
+    "by": "@optimisticETA"
+  },
+  {
+    "term": "butt text",
+    "pron": "BUT tekst",
+    "pos": "noun",
+    "cat": "Fat-Finger",
+    "votes": 289,
+    "def": "A message composed entirely by a back pocket, consisting of symbols, half-words, and one accidental emoji. Often more honest than anything the owner has typed on purpose.",
+    "meant": "(nothing — the pocket was in charge)",
+    "ex": [
+      [
+        "you",
+        "p[[;; ^^¥~~ ___ ..,p…z"
+      ],
+      [
+        "them",
+        "your pocket okay?"
+      ],
+      [
+        "you",
+        "it says more than i do"
+      ]
+    ],
+    "by": "@pocketpoet"
+  },
+  {
+    "term": "forehead typing",
+    "pron": "FOR-hed TY-ping",
+    "pos": "noun",
+    "cat": "Sleepy Text",
+    "votes": 312,
+    "def": "Texting while face-down and technically unconscious, producing long strings of punctuation, tildes, and yen symbols. The forehead has a vocabulary of roughly nine characters and unlimited confidence.",
+    "meant": "sleep",
+    "ex": [
+      [
+        "you",
+        "…^¥^~~¥^¥~~~¥^¥______"
+      ],
+      [
+        "them",
+        "that was your forehead wasn't it"
+      ],
+      [
+        "you",
+        "it has seniority now"
+      ]
+    ],
+    "by": "@svenhimself"
+  },
+  {
+    "term": "gn",
+    "pron": "G-N",
+    "pos": "abbreviation",
+    "cat": "Sign-Off",
+    "votes": 268,
+    "def": "“Good night,” compressed to its bare minimum by someone too tired for vowels. Frequently sent at 4 p.m. Frequently followed by three more hours of texting.",
+    "meant": "good night",
+    "ex": [
+      [
+        "you",
+        "gn"
+      ],
+      [
+        "them",
+        "it's 4pm"
+      ],
+      [
+        "you",
+        "gn stands for 'good, no?' in my heart"
+      ]
+    ],
+    "by": "@vowelbankrupt"
+  },
+  {
+    "term": "im out",
+    "pron": "EYEM owt",
+    "pos": "phrase",
+    "cat": "Sign-Off",
+    "votes": 295,
+    "def": "A declared exit from the conversation, delivered with the finality of a mic drop. The texter will return in approximately three minutes with a screenshot and “ok but look at this.”",
+    "meant": "I am leaving (terms and conditions apply)",
+    "ex": [
+      [
+        "you",
+        "shitttt. im out"
+      ],
+      [
+        "them",
+        "see you in 3"
+      ],
+      [
+        "you",
+        "ok but look at this"
+      ]
+    ],
+    "by": "@micdropper"
+  },
+  {
+    "term": "teh",
+    "pron": "TEH",
+    "pos": "article",
+    "cat": "Fat-Finger",
+    "votes": 233,
+    "def": "“The,” after a long day. The internet's founding typo, still appearing in group chats nightly like it pays rent there.",
+    "meant": "the",
+    "ex": [
+      [
+        "you",
+        "teh group chat has seen things"
+      ],
+      [
+        "them",
+        "teh group chat agrees"
+      ]
+    ],
+    "by": "@oldguard"
+  },
+  {
+    "term": "yuo",
+    "pron": "YOO-oh",
+    "pos": "pronoun",
+    "cat": "Fat-Finger",
+    "votes": 219,
+    "def": "“You,” typed by a thumb with ambitions bigger than its aim. Impossible to read without hearing it in a tiny, wrong voice.",
+    "meant": "you",
+    "ex": [
+      [
+        "you",
+        "yuo dont know how to type jungxt"
+      ],
+      [
+        "them",
+        "yuo typed that. yuo."
+      ]
+    ],
+    "by": "@thumbo"
+  },
+  {
+    "term": "ghost bubble",
+    "pron": "GOHST BUB-ul",
+    "pos": "noun",
+    "cat": "Chat Behavior",
+    "votes": 441,
+    "def": "The typing “…” that appears, pulses with promise, and vanishes without a message. Somewhere, a masterpiece was written, judged, and deleted. We will never know its name.",
+    "meant": "a thought that didn't survive review",
+    "ex": [
+      [
+        "them",
+        "what were you typing for 4 minutes"
+      ],
+      [
+        "you",
+        "nothing"
+      ],
+      [
+        "them",
+        "the bubble says otherwise"
+      ]
+    ],
+    "by": "@deleteddrafts"
+  },
+  {
+    "term": "read 2:47 AM",
+    "pron": "RED at too-for-tee-SEV-en",
+    "pos": "noun",
+    "cat": "Chat Behavior",
+    "votes": 455,
+    "def": "A read receipt timestamped deep in the night, followed by total silence. Not a rejection — a monument. The message was seen, considered, and filed under “problems for tomorrow.”",
+    "meant": "I saw it. I chose peace.",
+    "ex": [
+      [
+        "you",
+        "you saw my text at 2:47"
+      ],
+      [
+        "them",
+        "my eyes were awake. i was not"
+      ]
+    ],
+    "by": "@receiptkeeper"
+  },
+  {
+    "term": "plutonium pizza",
+    "pron": "ploo-TOH-nee-um PEET-suh",
+    "pos": "noun",
+    "cat": "Sleepy Text",
+    "votes": 367,
+    "def": "A 3 a.m. snack so questionable it glows in the dark and doubles as a nightlight. Side effects include hunger, regret, and gases the UN has been notified about.",
+    "meant": "leftover pizza, reheated with no supervision",
+    "ex": [
+      [
+        "you",
+        "mmm. green pizza"
+      ],
+      [
+        "them",
+        "green??"
+      ],
+      [
+        "you",
+        "glows. no flashlight needed for midnight snacks"
+      ]
+    ],
+    "by": "@midnightmatt"
+  },
+  {
+    "term": "atomic gases",
+    "pron": "uh-TOM-ik GAS-ez",
+    "pos": "noun",
+    "cat": "Sleepy Text",
+    "votes": 341,
+    "def": "Weapons-grade flatulence produced by radioactive snack choices. Certified by no authority. Felt by everyone in the building.",
+    "meant": "it was the plutonium pizza",
+    "ex": [
+      [
+        "them",
+        "..did u fart again"
+      ],
+      [
+        "you",
+        "…atomic. gases"
+      ],
+      [
+        "them",
+        "the UN has been notified"
+      ]
+    ],
+    "by": "@falloutboy"
+  },
+  {
+    "term": "new phone who dis",
+    "pron": "NOO fohn HOO dis",
+    "pos": "phrase",
+    "cat": "Chat Behavior",
+    "votes": 302,
+    "def": "Deployed exclusively by people who know exactly who dis. A diplomatic fiction that buys the sender 30 seconds to remember why they stopped replying in the first place.",
+    "meant": "I know who this is. I am stalling.",
+    "ex": [
+      [
+        "them",
+        "new phone who dis"
+      ],
+      [
+        "you",
+        "your lock screen is a photo of us"
+      ]
+    ],
+    "by": "@stallingtactics"
+  },
+  {
+    "term": "lol",
+    "pron": "LOL (never said aloud)",
+    "pos": "abbreviation",
+    "cat": "Slang",
+    "votes": 324,
+    "def": "“Laughing out loud,” typed with a completely straight face since 2009. Now functions purely as punctuation — a softener, a filler, a tiny white flag at the end of a risky sentence.",
+    "meant": "I acknowledge your message and feel nothing",
+    "ex": [
+      [
+        "them",
+        "rent is due tomorrow"
+      ],
+      [
+        "you",
+        "lol"
+      ]
+    ],
+    "by": "@straightface"
+  },
+  {
+    "term": "pwned",
+    "pron": "POHND",
+    "pos": "verb",
+    "cat": "Slang",
+    "votes": 187,
+    "def": "“Owned,” after the O key lost a fight. An ancient gaming-era typo so beloved it got promoted to a real word — proof that a jungxt, repeated enough, becomes law.",
+    "meant": "owned, thoroughly",
+    "ex": [
+      [
+        "you",
+        "autocorrect pwned me again"
+      ],
+      [
+        "them",
+        "ducking happens to everyone"
+      ]
+    ],
+    "by": "@homerowhero"
+  },
+  {
+    "term": "zzzzzz",
+    "pron": "the sound of a phone on a face",
+    "pos": "interjection",
+    "cat": "Sleepy Text",
+    "votes": 254,
+    "def": "The final transmission of a dying conversation: a thumb resting on the Z key as its owner crosses into sleep. Each additional z is one more second of plausible deniability.",
+    "meant": "I have fallen asleep on the keyboard",
+    "ex": [
+      [
+        "you",
+        "and thats why i think the meeting should be— zzzzzzzzz"
+      ],
+      [
+        "them",
+        "there he goes"
+      ]
+    ],
+    "by": "@svenhimself"
+  },
+  {
+    "term": "sent from my forehead",
+    "pron": "SENT frum my FOR-hed",
+    "pos": "phrase",
+    "cat": "Sleepy Text",
+    "votes": 276,
+    "def": "The unofficial email signature of the sleep-texter. Explains everything: the tildes, the yen symbols, the mysterious man named Sven. No apology included, because the sender is asleep.",
+    "meant": "disregard everything above this line",
+    "ex": [
+      [
+        "you",
+        "^^~~¥^ sent from my forehead"
+      ],
+      [
+        "them",
+        "its most coherent message yet"
+      ]
+    ],
+    "by": "@foreheadtypist"
+  }
+]

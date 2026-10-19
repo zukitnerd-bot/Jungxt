@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Jungxt — The Dictionary of Texting Gone Wrong</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #edf1ea;
+        --bg-soft: #e2e9de;
+        --surface: #ffffff;
+        --surface-2: #f4f7f2;
+        --ink: #15211a;
+        --ink-soft: #4c5d52;
+        --line: #d3ddd0;
+        --accent: #16a34a;
+        --accent-strong: #0e7a36;
+        --accent-soft: #dcf5e4;
+        --amber: #d97706;
+        --amber-soft: #fdf0d9;
+        --bubble-them: #e7ece5;
+        --bubble-you: #16a34a;
+        --bubble-you-ink: #ffffff;
+        --shadow: 0 10px 30px rgba(21, 33, 26, 0.08);
+        --radius: 18px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0b100d;
+          --bg-soft: #10160f;
+          --surface: #151d17;
+          --surface-2: #1a241c;
+          --ink: #e9f2eb;
+          --ink-soft: #9db3a4;
+          --line: #2a382d;
+          --accent: #3ddc74;
+          --accent-strong: #5ce88c;
+          --accent-soft: #14301d;
+          --amber: #f5b04c;
+          --amber-soft: #33240d;
+          --bubble-them: #232f26;
+          --bubble-you: #1d9e4c;
+          --bubble-you-ink: #04160a;
+          --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+        }
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: ui-sans-system, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.55;
+      }
+      h1, h2, h3, .display { font-family: "Bricolage Grotesque", ui-sans-system, sans-serif; }
+      .mono { font-family: "Space Mono", ui-monospace, monospace; }
+      a { color: var(--accent-strong); }
+
+      .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px 80px; }
+
+      /* ---------- Hero ---------- */
+      .hero { padding: 56px 0 8px; }
+      .hero h1 {
+        font-size: clamp(56px, 11vw, 118px);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 0.92;
+        margin: 0;
+      }
+      .hero h1 .x { color: var(--accent); }
+      .cursor {
+        display: inline-block; width: 0.09em; height: 0.78em;
+        background: var(--accent); margin-left: 0.06em;
+        vertical-align: -0.05em;
+        animation: blink 1.1s steps(1) infinite;
+      }
+      @keyframes blink { 50% { opacity: 0; } }
+      @media (prefers-reduced-motion: reduce) { .cursor { animation: none; } }
+      .tagline {
+        font-size: clamp(18px, 2.6vw, 24px);
+        color: var(--ink-soft);
+        max-width: 620px;
+        margin: 18px 0 0;
+      }
+      .tagline strong { color: var(--ink); }
+      .hero-stats {
+        display: flex; flex-wrap: wrap; gap: 10px 26px;
+        margin-top: 22px; font-size: 14px; color: var(--ink-soft);
+      }
+      .hero-stats b { color: var(--ink); font-family: "Space Mono", monospace; }
+
+      /* ---------- Search & controls ---------- */
+      .controls {
+        position: sticky; top: 0; z-index: 20;
+        background: color-mix(in srgb, var(--bg) 88%, transparent);
+        backdrop-filter: blur(10px);
+        padding: 16px 0 12px;
+        margin-top: 26px;
+      }
+      .search-row { display: flex; gap: 10px; flex-wrap: wrap; }
+      .search-box {
+        flex: 1 1 260px; display: flex; align-items: center; gap: 10px;
+        background: var(--surface); border: 1.5px solid var(--line);
+        border-radius: 999px; padding: 10px 18px;
+      }
+      .search-box svg { flex: none; color: var(--ink-soft); }
+      .search-box input {
+        border: 0; outline: 0; background: transparent; width: 100%;
+        font-size: 16px; color: var(--ink); font-family: inherit;
+      }
+      .search-box input::placeholder { color: var(--ink-soft); }
+      .btn {
+        appearance: none; border: 1.5px solid var(--line); cursor: pointer;
+        background: var(--surface); color: var(--ink);
+        border-radius: 999px; padding: 10px 18px;
+        font-size: 15px; font-weight: 600; font-family: inherit;
+        display: inline-flex; align-items: center; gap: 8px;
+        transition: border-color .15s, transform .1s;
+      }
+      .btn:hover { border-color: var(--accent); }
+      .btn:active { transform: scale(0.97); }
+      .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+      @media (prefers-color-scheme: dark) { .btn.primary { color: #04160a; } }
+      .btn.primary:hover { background: var(--accent-strong); border-color: var(--accent-strong); }
+      .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; align-items: center; }
+      .chip {
+        appearance: none; cursor: pointer; font-family: inherit;
+        border: 1.5px solid var(--line); background: transparent; color: var(--ink-soft);
+        border-radius: 999px; padding: 6px 14px; font-size: 13.5px; font-weight: 600;
+      }
+      .chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+      .sort-wrap { margin-left: auto; display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--ink-soft); }
+      .sort-wrap select {
+        font-family: inherit; font-size: 13.5px; font-weight: 600;
+        background: var(--surface); color: var(--ink);
+        border: 1.5px solid var(--line); border-radius: 999px; padding: 6px 10px;
+      }
+
+      /* ---------- Word of the day ---------- */
+      .wotd {
+        margin-top: 26px;
+        background: var(--surface);
+        border: 1.5px solid var(--line);
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+        padding: 28px;
+        display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 28px;
+      }
+      @media (max-width: 720px) { .wotd { grid-template-columns: 1fr; } }
+      .wotd-label {
+        display: inline-flex; align-items: center; gap: 8px;
+        background: var(--amber-soft); color: var(--amber);
+        font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+        border-radius: 999px; padding: 5px 12px;
+      }
+      .wotd h2 { font-size: clamp(38px, 6vw, 56px); font-weight: 800; letter-spacing: -0.02em; margin: 14px 0 2px; line-height: 1; }
+      .wotd .pos { color: var(--ink-soft); font-style: italic; font-size: 17px; }
+      .wotd .def { font-size: 18px; margin: 14px 0 0; }
+      .wotd .meant { margin-top: 12px; font-size: 14.5px; color: var(--ink-soft); }
+      .wotd .meant b { color: var(--amber); font-family: "Space Mono", monospace; font-size: 13px; }
+
+      /* phone chat mock */
+      .phone {
+        background: var(--surface-2); border: 1.5px solid var(--line);
+        border-radius: 20px; padding: 16px;
+        display: flex; flex-direction: column; gap: 8px;
+        align-self: start;
+      }
+      .phone-head {
+        display: flex; align-items: center; gap: 10px;
+        padding-bottom: 10px; border-bottom: 1px solid var(--line); margin-bottom: 4px;
+      }
+      .avatar {
+        width: 34px; height: 34px; border-radius: 50%; flex: none;
+        background: var(--accent); color: #fff;
+        display: grid; place-items: center; font-weight: 800; font-size: 15px;
+        font-family: "Bricolage Grotesque", sans-serif;
+      }
+      @media (prefers-color-scheme: dark) { .avatar { color: #04160a; } }
+      .phone-head .who { font-weight: 700; font-size: 14.5px; line-height: 1.2; }
+      .phone-head .status { font-size: 12px; color: var(--accent-strong); }
+      .bubble {
+        max-width: 82%; padding: 9px 13px; border-radius: 18px;
+        font-size: 14.5px; line-height: 1.4; overflow-wrap: anywhere;
+      }
+      .bubble.them { background: var(--bubble-them); align-self: flex-start; border-bottom-left-radius: 5px; }
+      .bubble.you { background: var(--bubble-you); color: var(--bubble-you-ink); align-self: flex-end; border-bottom-right-radius: 5px; }
+      .bubble-meta { font-size: 11px; color: var(--ink-soft); align-self: flex-end; font-family: "Space Mono", monospace; }
+
+      /* ---------- Entry grid ---------- */
+      .section-head { display: flex; align-items: baseline; gap: 14px; margin: 44px 0 4px; }
+      .section-head h2 { font-size: 30px; font-weight: 800; letter-spacing: -0.01em; margin: 0; }
+      .section-head .count { color: var(--ink-soft); font-size: 14px; }
+      .grid {
+        display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 18px;
+      }
+      @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+      .card {
+        background: var(--surface); border: 1.5px solid var(--line);
+        border-radius: var(--radius); padding: 22px;
+        display: flex; flex-direction: column; gap: 10px;
+        box-shadow: 0 2px 10px rgba(21, 33, 26, 0.04);
+      }
+      .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+      .term { font-size: 30px; font-weight: 800; letter-spacing: -0.015em; line-height: 1.05; margin: 0; overflow-wrap: anywhere; }
+      .cat {
+        flex: none; font-size: 11.5px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+        background: var(--accent-soft); color: var(--accent-strong);
+        border-radius: 999px; padding: 4px 10px; margin-top: 5px;
+      }
+      .pos-line { color: var(--ink-soft); font-size: 14px; margin-top: -6px; }
+      .pos-line .pos { font-style: italic; }
+      .pos-line .pron { font-family: "Space Mono", monospace; font-size: 13px; }
+      .def { margin: 0; font-size: 16px; }
+      .meant { font-size: 13.5px; color: var(--ink-soft); }
+      .meant b { color: var(--amber); font-family: "Space Mono", monospace; font-size: 12px; letter-spacing: 0.04em; }
+      .example {
+        background: var(--surface-2); border: 1px solid var(--line);
+        border-radius: 14px; padding: 12px;
+        display: flex; flex-direction: column; gap: 6px;
+      }
+      .example .bubble { font-size: 13.5px; padding: 7px 11px; }
+      .card-foot {
+        margin-top: auto; padding-top: 6px;
+        display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      }
+      .by { font-size: 12.5px; color: var(--ink-soft); font-family: "Space Mono", monospace; }
+      .votes { display: flex; gap: 6px; }
+      .vote-btn {
+        appearance: none; cursor: pointer; font-family: inherit;
+        display: inline-flex; align-items: center; gap: 6px;
+        border: 1.5px solid var(--line); background: transparent; color: var(--ink-soft);
+        border-radius: 999px; padding: 5px 12px; font-size: 13.5px; font-weight: 700;
+      }
+      .vote-btn svg { width: 14px; height: 14px; }
+      .vote-btn.up.active { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-strong); }
+      .vote-btn.down.active { background: var(--amber-soft); border-color: var(--amber); color: var(--amber); }
+      .empty {
+        border: 1.5px dashed var(--line); border-radius: var(--radius);
+        padding: 44px 24px; text-align: center; color: var(--ink-soft); margin-top: 18px;
+      }
+      .empty .big { font-family: "Bricolage Grotesque", sans-serif; font-size: 24px; font-weight: 800; color: var(--ink); margin-bottom: 6px; }
+
+      /* ---------- Hall of fame ---------- */
+      .hof { margin-top: 52px; }
+      .hof-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
+      @media (max-width: 720px) { .hof-list { grid-template-columns: 1fr; } }
+      .hof-item {
+        background: var(--surface); border: 1.5px solid var(--line); border-radius: var(--radius);
+        padding: 20px; display: flex; gap: 14px; align-items: flex-start;
+      }
+      .rank {
+        font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 30px;
+        color: var(--amber); line-height: 1; flex: none;
+      }
+      .hof-item .term { font-size: 22px; }
+      .hof-item p { margin: 4px 0 0; font-size: 14px; color: var(--ink-soft); }
+      .hof-item .score { font-family: "Space Mono", monospace; font-size: 12.5px; color: var(--accent-strong); font-weight: 700; }
+
+      /* ---------- Add entry ---------- */
+      .add-box {
+        margin-top: 52px; background: var(--surface);
+        border: 1.5px solid var(--line); border-radius: 24px; padding: 28px;
+        box-shadow: var(--shadow);
+      }
+      .add-box h2 { font-size: 28px; font-weight: 800; margin: 0 0 6px; letter-spacing: -0.01em; }
+      .add-box > p { color: var(--ink-soft); margin: 0 0 20px; max-width: 560px; }
+      form.add { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+      @media (max-width: 720px) { form.add { grid-template-columns: 1fr; } }
+      .field { display: flex; flex-direction: column; gap: 6px; }
+      .field.full { grid-column: 1 / -1; }
+      .field label { font-size: 13px; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: var(--ink-soft); }
+      .field input, .field textarea, .field select {
+        font-family: inherit; font-size: 16px; color: var(--ink);
+        background: var(--surface-2); border: 1.5px solid var(--line);
+        border-radius: 12px; padding: 11px 14px; width: 100%;
+      }
+      .field textarea { resize: vertical; min-height: 76px; }
+      .field input:focus, .field textarea:focus, .field select:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+      .form-foot { grid-column: 1 / -1; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+      .form-note { font-size: 13px; color: var(--ink-soft); }
+      .added-msg { font-size: 14px; font-weight: 700; color: var(--accent-strong); display: none; }
+
+      footer { margin-top: 60px; padding-top: 22px; border-top: 1.5px solid var(--line); color: var(--ink-soft); font-size: 13.5px; display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between; }
+      .toast {
+        position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 80px);
+        background: var(--ink); color: var(--bg); border-radius: 999px;
+        padding: 11px 20px; font-size: 14.5px; font-weight: 600;
+        transition: transform .25s ease; z-index: 50; max-width: calc(100vw - 40px); text-align: center;
+      }
+      .toast.show { transform: translate(-50%, 0); }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="hero">
+        <h1>Jungxt<span class="x">.</span><span class="cursor" aria-hidden="true"></span></h1>
+        <p class="tagline">The dictionary of <strong>texting typos</strong>, <strong>autocorrect casualties</strong>, and <strong>3 a.m. sleepy-texting slang</strong> — every garbled word you ever sent, finally defined.</p>
+        <div class="hero-stats">
+          <span><b id="stat-count">0</b> entries and counting</span>
+          <span><b>100%</b> typed with real thumbs</span>
+          <span><b>0</b> proofreading performed</span>
+        </div>
+      </header>
+
+      <div class="controls">
+        <div class="search-row">
+          <label class="search-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
+            <input id="search" type="search" placeholder="Search the jungxt… try “ducking”" aria-label="Search entries" />
+          </label>
+          <button class="btn" id="random-btn" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 20 21 3"/><path d="M21 16v5h-5"/><path d="m15 15 6 6"/><path d="M4 4l5 5"/></svg>
+            Random entry
+          </button>
+        </div>
+        <div class="chips" id="chips" role="group" aria-label="Filter by category"></div>
+      </div>
+
+      <section class="wotd" id="wotd" aria-label="Word of the day"></section>
+
+      <div class="section-head">
+        <h2>The Dictionary</h2>
+        <span class="count" id="result-count"></span>
+      </div>
+      <div class="grid" id="grid"></div>
+      <div class="empty" id="empty" hidden>
+        <div class="big">No matches. Just vibes.</div>
+        <p>Nothing in the jungxt matches that — which, honestly, makes it a strong candidate for a new entry. Add it below.</p>
+      </div>
+
+      <section class="hof">
+        <div class="section-head" style="margin-top:0">
+          <h2>Hall of Fame</h2>
+          <span class="count">the most-loved casualties, ranked live by your votes</span>
+        </div>
+        <div class="hof-list" id="hof"></div>
+      </section>
+
+      <section class="add-box" id="add">
+        <h2>Coin a jungxt</h2>
+        <p>Sent something so garbled it deserves a plaque? Give it a term, a definition worthy of its shame, and file it under the right disaster category.</p>
+        <form class="add" id="add-form">
+          <div class="field">
+            <label for="f-term">The garbled term</label>
+            <input id="f-term" required maxlength="40" placeholder="e.g. goodnigth" />
+          </div>
+          <div class="field">
+            <label for="f-meant">What you actually meant</label>
+            <input id="f-meant" maxlength="60" placeholder="e.g. good night" />
+          </div>
+          <div class="field full">
+            <label for="f-def">Definition</label>
+            <textarea id="f-def" required maxlength="280" placeholder="Make it funny. Make it hurt a little."></textarea>
+          </div>
+          <div class="field">
+            <label for="f-pos">Part of speech</label>
+            <select id="f-pos">
+              <option>noun</option><option>verb</option><option>adjective</option>
+              <option>adverb</option><option>interjection</option><option>abbreviation</option>
+              <option>phrase</option><option>pronoun</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-cat">Disaster category</label>
+            <select id="f-cat"></select>
+          </div>
+          <div class="form-foot">
+            <button class="btn primary" type="submit">Add to the dictionary</button>
+            <span class="form-note">Appears in the grid right away, for this visit.</span>
+            <span class="added-msg" id="added-msg">Filed. History will judge it kindly.</span>
+          </div>
+        </form>
+      </section>
+
+      <footer>
+        <span>Jungxt — defined at 12:47 a.m., against all advice.</span>
+        <span class="mono">no texts were proofread in the making of this site</span>
+      </footer>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script>
+      var CATEGORIES = ["Autocorrect Casualty", "Sleepy Text", "Fat-Finger", "Slang", "Sign-Off", "Chat Behavior"];
+
+      var ENTRIES = [
+        { term: "jungxt", pron: "JUNG-kst", pos: "noun", cat: "Slang", votes: 412,
+          def: "Any word that leaves your thumbs bearing no resemblance to what your brain sent. The entire genre of garbled texting, named in a 12:47 a.m. moment of accidental genius.",
+          meant: "just text",
+          ex: [ ["them", "what should we call the dictionary"], ["you", "jungxt"], ["them", "…that says nothing"], ["you", "it says everything"] ],
+          by: "@thefounder" },
+        { term: "sven", pron: "SVEN", pos: "noun", cat: "Sleepy Text", votes: 388,
+          def: "The mysterious Scandinavian man who appears in your chat when you fall asleep mid-conversation. Nobody knows Sven. Sven knows everybody. He has never once explained himself.",
+          meant: "(asleep — no message intended)",
+          ex: [ ["you", "Sven"], ["them", "who is sven??"], ["you", "…fin"] ],
+          by: "@foreheadtypist" },
+        { term: "fin", pron: "FEEN", pos: "interjection", cat: "Sign-Off", votes: 356,
+          def: "French for “the end,” typed by someone whose brain has already left the conversation. A dramatic curtain call — usually delivered 40 minutes before the texter sends six more messages.",
+          meant: "I'm done talking (narrator: he was not)",
+          ex: [ ["you", "plutonium pizza. atomic gases. ..fin"], ["them", "you said fin an hour ago"], ["you", "this is the credits scene"] ],
+          by: "@midnightmatt" },
+        { term: "ducking", pron: "DUK-ing", pos: "adjective", cat: "Autocorrect Casualty", votes: 501,
+          def: "The family-friendly stand-in your phone swaps in at the worst possible moment, transforming raw fury into a waterfowl situation. Nobody has ever been ducking anything on purpose.",
+          meant: "a much stronger word",
+          ex: [ ["you", "I ducking told you the meeting moved"], ["them", "sir this is the group chat with your boss in it"] ],
+          by: "@quackattack" },
+        { term: "defiantly", pron: "de-FY-ant-lee", pos: "adverb", cat: "Autocorrect Casualty", votes: 344,
+          def: "What “definitely” becomes after midnight. Accidentally turns every agreement into a small act of rebellion: “I will defiantly be there” sounds like you're attending under protest.",
+          meant: "definitely",
+          ex: [ ["you", "ill defiantly help you move saturday"], ["them", "you don't have to sound so brave about it"] ],
+          by: "@reluctanthelper" },
+        { term: "k.", pron: "KAY.", pos: "noun", cat: "Chat Behavior", votes: 467,
+          def: "One letter and a period: the most dangerous message in the English language. Contains more hostility per character than any text ever sent. Entire relationships have been ended by “k.” and its colder sibling, “k”",
+          meant: "okay (it is not okay)",
+          ex: [ ["them", "we need to talk about the dishes"], ["you", "k."], ["them", "and there it is"] ],
+          by: "@coldestshoulder" },
+        { term: "asdfghjkl", pron: "AZ-duf-guh-JKL", pos: "interjection", cat: "Slang", votes: 429,
+          def: "A keyboard smash expressing an emotion too large for language — joy, rage, secondhand embarrassment, or seeing your crush type your name. The home row is the first casualty of feeling things.",
+          meant: "I have no words, so here are all of them at once",
+          ex: [ ["them", "he liked your photo from 2019"], ["you", "asdfghjkl"] ],
+          by: "@homerowhero" },
+        { term: "otw", pron: "O-T-W", pos: "abbreviation", cat: "Chat Behavior", votes: 398,
+          def: "“On the way.” Translation: still on the couch, one shoe located, reconsidering the entire plan. A legally binding promise that means absolutely nothing.",
+          meant: "I will leave eventually",
+          ex: [ ["them", "you close?"], ["you", "otw"], ["them", "you sent that from your couch last time"], ["you", "new couch. same energy"] ],
+          by: "@fiveMoreMinutes" },
+        { term: "5 min away", pron: "FYVE min uh-WAY", pos: "phrase", cat: "Chat Behavior", votes: 377,
+          def: "A unit of time invented by texters, equal to anywhere between 20 and 90 actual minutes. The “5” is decorative. The “away” is aspirational.",
+          meant: "geography has not yet been consulted",
+          ex: [ ["you", "5 min away"], ["them", "you live 40 minutes away"], ["you", "traffic of the soul"] ],
+          by: "@optimisticETA" },
+        { term: "butt text", pron: "BUT tekst", pos: "noun", cat: "Fat-Finger", votes: 289,
+          def: "A message composed entirely by a back pocket, consisting of symbols, half-words, and one accidental emoji. Often more honest than anything the owner has typed on purpose.",
+          meant: "(nothing — the pocket was in charge)",
+          ex: [ ["you", "p[[;; ^^¥~~ ___ ..,p…z"], ["them", "your pocket okay?"], ["you", "it says more than i do"] ],
+          by: "@pocketpoet" },
+        { term: "forehead typing", pron: "FOR-hed TY-ping", pos: "noun", cat: "Sleepy Text", votes: 312,
+          def: "Texting while face-down and technically unconscious, producing long strings of punctuation, tildes, and yen symbols. The forehead has a vocabulary of roughly nine characters and unlimited confidence.",
+          meant: "sleep",
+          ex: [ ["you", "…^¥^~~¥^¥~~~¥^¥______"], ["them", "that was your forehead wasn't it"], ["you", "it has seniority now"] ],
+          by: "@svenhimself" },
+        { term: "gn", pron: "G-N", pos: "abbreviation", cat: "Sign-Off", votes: 268,
+          def: "“Good night,” compressed to its bare minimum by someone too tired for vowels. Frequently sent at 4 p.m. Frequently followed by three more hours of texting.",
+          meant: "good night",
+          ex: [ ["you", "gn"], ["them", "it's 4pm"], ["you", "gn stands for 'good, no?' in my heart"] ],
+          by: "@vowelbankrupt" },
+        { term: "im out", pron: "EYEM owt", pos: "phrase", cat: "Sign-Off", votes: 295,
+          def: "A declared exit from the conversation, delivered with the finality of a mic drop. The texter will return in approximately three minutes with a screenshot and “ok but look at this.”",
+          meant: "I am leaving (terms and conditions apply)",
+          ex: [ ["you", "shitttt. im out"], ["them", "see you in 3"], ["you", "ok but look at this"] ],
+          by: "@micdropper" },
+        { term: "teh", pron: "TEH", pos: "article", cat: "Fat-Finger", votes: 233,
+          def: "“The,” after a long day. The internet's founding typo, still appearing in group chats nightly like it pays rent there.",
+          meant: "the",
+          ex: [ ["you", "teh group chat has seen things"], ["them", "teh group chat agrees"] ],
+          by: "@oldguard" },
+        { term: "yuo", pron: "YOO-oh", pos: "pronoun", cat: "Fat-Finger", votes: 219,
+          def: "“You,” typed by a thumb with ambitions bigger than its aim. Impossible to read without hearing it in a tiny, wrong voice.",
+          meant: "you",
+          ex: [ ["you", "yuo dont know how to type jungxt"], ["them", "yuo typed that. yuo."] ],
+          by: "@thumbo" },
+        { term: "ghost bubble", pron: "GOHST BUB-ul", pos: "noun", cat: "Chat Behavior", votes: 441,
+          def: "The typing “…” that appears, pulses with promise, and vanishes without a message. Somewhere, a masterpiece was written, judged, and deleted. We will never know its name.",
+          meant: "a thought that didn't survive review",
+          ex: [ ["them", "what were you typing for 4 minutes"], ["you", "nothing"], ["them", "the bubble says otherwise"] ],
+          by: "@deleteddrafts" },
+        { term: "read 2:47 AM", pron: "RED at too-for-tee-SEV-en", pos: "noun", cat: "Chat Behavior", votes: 455,
+          def: "A read receipt timestamped deep in the night, followed by total silence. Not a rejection — a monument. The message was seen, considered, and filed under “problems for tomorrow.”",
+          meant: "I saw it. I chose peace.",
+          ex: [ ["you", "you saw my text at 2:47"], ["them", "my eyes were awake. i was not"] ],
+          by: "@receiptkeeper" },
+        { term: "plutonium pizza", pron: "ploo-TOH-nee-um PEET-suh", pos: "noun", cat: "Sleepy Text", votes: 367,
+          def: "A 3 a.m. snack so questionable it glows in the dark and doubles as a nightlight. Side effects include hunger, regret, and gases the UN has been notified about.",
+          meant: "leftover pizza, reheated with no supervision",
+          ex: [ ["you", "mmm. green pizza"], ["them", "green??"], ["you", "glows. no flashlight needed for midnight snacks"] ],
+          by: "@midnightmatt" },
+        { term: "atomic gases", pron: "uh-TOM-ik GAS-ez", pos: "noun", cat: "Sleepy Text", votes: 341,
+          def: "Weapons-grade flatulence produced by radioactive snack choices. Certified by no authority. Felt by everyone in the building.",
+          meant: "it was the plutonium pizza",
+          ex: [ ["them", "..did u fart again"], ["you", "…atomic. gases"], ["them", "the UN has been notified"] ],
+          by: "@falloutboy" },
+        { term: "new phone who dis", pron: "NOO fohn HOO dis", pos: "phrase", cat: "Chat Behavior", votes: 302,
+          def: "Deployed exclusively by people who know exactly who dis. A diplomatic fiction that buys the sender 30 seconds to remember why they stopped replying in the first place.",
+          meant: "I know who this is. I am stalling.",
+          ex: [ ["them", "new phone who dis"], ["you", "your lock screen is a photo of us"] ],
+          by: "@stallingtactics" },
+        { term: "lol", pron: "LOL (never said aloud)", pos: "abbreviation", cat: "Slang", votes: 324,
+          def: "“Laughing out loud,” typed with a completely straight face since 2009. Now functions purely as punctuation — a softener, a filler, a tiny white flag at the end of a risky sentence.",
+          meant: "I acknowledge your message and feel nothing",
+          ex: [ ["them", "rent is due tomorrow"], ["you", "lol"] ],
+          by: "@straightface" },
+        { term: "pwned", pron: "POHND", pos: "verb", cat: "Slang", votes: 187,
+          def: "“Owned,” after the O key lost a fight. An ancient gaming-era typo so beloved it got promoted to a real word — proof that a jungxt, repeated enough, becomes law.",
+          meant: "owned, thoroughly",
+          ex: [ ["you", "autocorrect pwned me again"], ["them", "ducking happens to everyone"] ],
+          by: "@homerowhero" },
+        { term: "zzzzzz", pron: "the sound of a phone on a face", pos: "interjection", cat: "Sleepy Text", votes: 254,
+          def: "The final transmission of a dying conversation: a thumb resting on the Z key as its owner crosses into sleep. Each additional z is one more second of plausible deniability.",
+          meant: "I have fallen asleep on the keyboard",
+          ex: [ ["you", "and thats why i think the meeting should be— zzzzzzzzz"], ["them", "there he goes"] ],
+          by: "@svenhimself" },
+        { term: "sent from my forehead", pron: "SENT frum my FOR-hed", pos: "phrase", cat: "Sleepy Text", votes: 276,
+          def: "The unofficial email signature of the sleep-texter. Explains everything: the tildes, the yen symbols, the mysterious man named Sven. No apology included, because the sender is asleep.",
+          meant: "disregard everything above this line",
+          ex: [ ["you", "^^~~¥^ sent from my forehead"], ["them", "its most coherent message yet"] ],
+          by: "@foreheadtypist" }
+      ];
+
+      var state = { query: "", cat: "All", sort: "loved", myVotes: {} };
+
+      var grid = document.getElementById("grid");
+      var emptyEl = document.getElementById("empty");
+      var resultCount = document.getElementById("result-count");
+      var toast = document.getElementById("toast");
+      var toastTimer = null;
+
+      function showToast(msg) {
+        toast.textContent = msg;
+        toast.classList.add("show");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () { toast.classList.remove("show"); }, 2600);
+      }
+
+      function esc(s) {
+        return String(s).replace(/[&<>"']/g, function (c) {
+          return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+        });
+      }
+
+      function bubblesHtml(ex) {
+        return ex.map(function (m) {
+          return '<div class="bubble ' + m[0] + '">' + esc(m[1]) + "</div>";
+        }).join("");
+      }
+
+      function thumbSvg(up) {
+        var d = up
+          ? "M7 22V11L12 2c1.2 0 2.2 1 2 2.2L13.4 9H20a2 2 0 0 1 2 2.4l-1.2 8A2 2 0 0 1 18.8 21H7zM3 11h4v11H3z"
+          : "M17 2v11l-5 9c-1.2 0-2.2-1-2-2.2L10.6 15H4a2 2 0 0 1-2-2.4l1.2-8A2 2 0 0 1 5.2 3H17zM21 13h-4V2h4z";
+        return '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="' + d + '"/></svg>';
+      }
+
+      function cardHtml(e, i) {
+        var v = state.myVotes[i] || 0;
+        var score = e.votes + v;
+        return '<article class="card">' +
+          '<div class="card-top"><h3 class="term">' + esc(e.term) + '</h3><span class="cat">' + esc(e.cat) + "</span></div>" +
+          '<div class="pos-line"><span class="pos">' + esc(e.pos) + '</span> · <span class="pron">/' + esc(e.pron) + '/</span></div>' +
+          '<p class="def">' + esc(e.def) + "</p>" +
+          (e.meant ? '<div class="meant"><b>MEANT</b>&nbsp; ' + esc(e.meant) + "</div>" : "") +
+          (e.ex ? '<div class="example">' + bubblesHtml(e.ex) + "</div>" : "") +
+          '<div class="card-foot"><span class="by">by ' + esc(e.by) + '</span>' +
+          '<span class="votes">' +
+            '<button class="vote-btn up' + (v === 1 ? " active" : "") + '" data-vote="1" data-idx="' + i + '" aria-label="Upvote ' + esc(e.term) + '">' + thumbSvg(true) + score + "</button>" +
+            '<button class="vote-btn down' + (v === -1 ? " active" : "") + '" data-vote="-1" data-idx="' + i + '" aria-label="Downvote ' + esc(e.term) + '">' + thumbSvg(false) + "</button>" +
+          "</span></div></article>";
+      }
+
+      function filtered() {
+        var q = state.query.trim().toLowerCase();
+        var list = ENTRIES.map(function (e, i) { return { e: e, i: i }; });
+        list = list.filter(function (r) {
+          if (state.cat !== "All" && r.e.cat !== state.cat) return false;
+          if (!q) return true;
+          return (r.e.term + " " + r.e.def + " " + (r.e.meant || "") + " " + r.e.cat).toLowerCase().indexOf(q) !== -1;
+        });
+        if (state.sort === "loved") list.sort(function (a, b) { return score(b) - score(a); });
+        else if (state.sort === "az") list.sort(function (a, b) { return a.e.term.localeCompare(b.e.term); });
+        else if (state.sort === "new") list.sort(function (a, b) { return b.i - a.i; });
+        return list;
+      }
+      function score(r) { return r.e.votes + (state.myVotes[r.i] || 0); }
+
+      function render() {
+        var list = filtered();
+        grid.innerHTML = list.map(function (r) { return cardHtml(r.e, r.i); }).join("");
+        emptyEl.hidden = list.length > 0;
+        resultCount.textContent = list.length === ENTRIES.length
+          ? ENTRIES.length + " entries"
+          : "showing " + list.length + " of " + ENTRIES.length;
+        document.getElementById("stat-count").textContent = ENTRIES.length;
+        renderHof();
+      }
+
+      function renderHof() {
+        var top = ENTRIES.map(function (e, i) { return { e: e, i: i }; })
+          .sort(function (a, b) { return score(b) - score(a); }).slice(0, 3);
+        document.getElementById("hof").innerHTML = top.map(function (r, n) {
+          return '<div class="hof-item"><div class="rank">' + (n + 1) + '</div><div>' +
+            '<div class="term">' + esc(r.e.term) + '</div>' +
+            '<span class="score">' + score(r) + " upvotes · " + esc(r.e.cat) + "</span>" +
+            "<p>" + esc(r.e.def.split(".")[0]) + ".</p></div></div>";
+        }).join("");
+      }
+
+      /* Word of the day — rotates daily, deterministic by date */
+      function renderWotd() {
+        var now = new Date();
+        var dayNum = Math.floor(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) / 86400000);
+        var e = ENTRIES[dayNum % ENTRIES.length];
+        var dateStr = now.toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" });
+        document.getElementById("wotd").innerHTML =
+          '<div><span class="wotd-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 1 4 12.7c-.6.5-1 1.2-1 2.3H9c0-1.1-.4-1.8-1-2.3A7 7 0 0 1 12 2zM9 18h6v1a3 3 0 0 1-6 0v-1z"/></svg> Word of the day · ' + esc(dateStr) + "</span>" +
+          "<h2>" + esc(e.term) + '</h2><div class="pos">' + esc(e.pos) + ' · /' + esc(e.pron) + '/</div>' +
+          '<p class="def">' + esc(e.def) + "</p>" +
+          (e.meant ? '<p class="meant"><b>MEANT</b>&nbsp; ' + esc(e.meant) + "</p>" : "") +
+          '<p class="meant">Filed under ' + esc(e.cat) + " · " + esc(e.by) + "</p></div>" +
+          '<div class="phone"><div class="phone-head"><div class="avatar">' + esc(e.by.replace("@", "").charAt(0).toUpperCase()) + '</div><div><div class="who">' + esc(e.by) + '</div><div class="status">online — unfortunately</div></div></div>' +
+          (e.ex ? bubblesHtml(e.ex) : "") +
+          '<div class="bubble-meta">Delivered · 12:47 AM</div></div>';
+      }
+
+      /* Chips + sort */
+      var chipsEl = document.getElementById("chips");
+      var cats = ["All"].concat(CATEGORIES);
+      chipsEl.innerHTML = cats.map(function (c) {
+        return '<button class="chip" data-cat="' + esc(c) + '" aria-pressed="' + (c === "All") + '">' + esc(c) + "</button>";
+      }).join("") +
+      '<span class="sort-wrap"><label for="sort">Sort</label><select id="sort">' +
+      '<option value="loved">Most loved</option><option value="az">A – Z</option><option value="new">Newest first</option></select></span>';
+
+      chipsEl.addEventListener("click", function (ev) {
+        var b = ev.target.closest(".chip"); if (!b) return;
+        state.cat = b.getAttribute("data-cat");
+        chipsEl.querySelectorAll(".chip").forEach(function (c) { c.setAttribute("aria-pressed", c === b ? "true" : "false"); });
+        render();
+      });
+      document.getElementById("sort").addEventListener("change", function (ev) { state.sort = ev.target.value; render(); });
+
+      document.getElementById("search").addEventListener("input", function (ev) { state.query = ev.target.value; render(); });
+
+      document.getElementById("random-btn").addEventListener("click", function () {
+        var i = Math.floor(Math.random() * ENTRIES.length);
+        state.query = ""; document.getElementById("search").value = "";
+        state.cat = "All";
+        chipsEl.querySelectorAll(".chip").forEach(function (c) { c.setAttribute("aria-pressed", c.getAttribute("data-cat") === "All" ? "true" : "false"); });
+        render();
+        var cards = grid.querySelectorAll(".card");
+        var pos = ENTRIES.map(function (e, idx) { return idx; });
+        /* find the rendered card for entry i */
+        var btns = grid.querySelectorAll("[data-idx]");
+        for (var k = 0; k < btns.length; k++) {
+          if (parseInt(btns[k].getAttribute("data-idx"), 10) === i) {
+            var card = btns[k].closest(".card");
+            card.scrollIntoView({ behavior: "smooth", block: "center" });
+            card.style.outline = "2.5px solid var(--accent)";
+            setTimeout(function () { card.style.outline = ""; }, 1800);
+            break;
+          }
+        }
+        showToast("Random jungxt: “" + ENTRIES[i].term + "”");
+      });
+
+      grid.addEventListener("click", function (ev) {
+        var b = ev.target.closest("[data-vote]"); if (!b) return;
+        var idx = parseInt(b.getAttribute("data-idx"), 10);
+        var val = parseInt(b.getAttribute("data-vote"), 10);
+        state.myVotes[idx] = state.myVotes[idx] === val ? 0 : val;
+        render();
+      });
+
+      /* Add-entry form */
+      var catSelect = document.getElementById("f-cat");
+      catSelect.innerHTML = CATEGORIES.map(function (c) { return "<option>" + esc(c) + "</option>"; }).join("");
+      document.getElementById("add-form").addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        var term = document.getElementById("f-term").value.trim();
+        var def = document.getElementById("f-def").value.trim();
+        if (!term || !def) return;
+        ENTRIES.push({
+          term: term.toLowerCase(), pron: "you know the sound", pos: document.getElementById("f-pos").value,
+          cat: catSelect.value, votes: 1, def: def,
+          meant: document.getElementById("f-meant").value.trim() || "something coherent",
+          ex: [["you", term], ["them", "…what"], ["you", "jungxt. look it up"]],
+          by: "@you"
+        });
+        state.myVotes[ENTRIES.length - 1] = 1;
+        state.query = ""; document.getElementById("search").value = "";
+        state.cat = "All"; state.sort = "new"; document.getElementById("sort").value = "new";
+        chipsEl.querySelectorAll(".chip").forEach(function (c) { c.setAttribute("aria-pressed", c.getAttribute("data-cat") === "All" ? "true" : "false"); });
+        render();
+        var msg = document.getElementById("added-msg");
+        msg.style.display = "inline";
+        ev.target.reset();
+        showToast("“" + term + "” is now canon.");
+        document.getElementById("grid").scrollIntoView({ behavior: "smooth", block: "start" });
+        setTimeout(function () { msg.style.display = "none"; }, 4000);
+      });
+
+      renderWotd();
+      render();
+    </script>
+  </body>
+</html>
